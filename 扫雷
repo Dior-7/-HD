@@ -1,0 +1,52 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include"game.h"
+void menu()
+{
+	printf("******************\n"
+		  "**play 1 or exit 0**\n"
+		   "*******************\n");
+}
+void game()
+{
+	//造棋盘
+	char board[ROWS][COLS] = { 0 };
+	char show[ROWS][COLS] = { 0 };
+	//初始化棋盘
+	initboard(board, ROWS, COLS, '0');
+	initboard(show, ROWS, COLS, '*');
+	//display(board, ROWS, COLS)；这一行不要，因为玩家不能看到这个层面；
+	//布置雷
+	setboard(board,ROWS,COLS);
+	//排查雷
+	find(board,show,ROW,COL);
+
+}
+void test()
+{
+	int a = 0;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		menu();
+		scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("输入错误，请重新输入:\n");
+			break;
+		}
+
+
+	} while (a);
+}
+int main()
+{
+	test();
+	return 0;
+}
