@@ -1,0 +1,78 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+struct stu
+{
+	char name[10];
+	char id[20];
+	int age;
+	
+};
+int main()
+{
+	int a = 10;
+	struct stu s1 = {"20","handi",21};
+	struct stu* p = &s1;
+
+    printf("%s\n", (*p).name);
+	printf("%d\n", s1.age);
+	printf("%s\n", p->id);
+	char a = 1, b = 2;
+	char c = a + b;
+	printf("%d", c);
+	int a = 2, b = 2, c = 3;
+	int d = a * b + a * c + b * c;
+	int f = c + --c;
+	printf("%d", f);
+	int a = 7;
+	int* p = &a;
+	int b = 0x2;
+	printf("%d", b);
+	int arr[11] = {1,2,3,4,5};
+	printf("%d", & arr[7] - &arr[0]);
+	int* p = arr;
+	int i = 0;
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	for (i = 0; i <sz; i++)
+	{
+		printf("%d ", *p);
+		p++;
+	}
+	int str(char* str)
+	{
+		char* init=str;
+		char* end=str;
+		while (*end != '\0');
+		{
+			end++;
+		}
+		*init - *end;
+	}
+	char arr[] = "handi";
+	int a = str(arr);
+	printf("%d", a);
+	return 0;
+}
+int lenstr(char* lenstr)
+{
+	char* init = lenstr;
+	char* end  = lenstr;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	
+	return end-init;
+}
+int main()
+{
+	char arr[] = "handi";
+	int a = lenstr(arr);
+	printf("%d", a);
+	return 0;
+	int a = 7;
+	int* p = &a;
+	int**pa = &p;
+	**pa = 77;
+	printf("%d",a);
+	return 0;
+}
