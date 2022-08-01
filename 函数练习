@@ -1,0 +1,66 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <iostream> using namespace std;
+//enum sex;
+//{
+	//male,
+//female,
+//secure
+//};
+//int main()
+//{
+
+	
+	//return 0;
+
+//int main()
+//{   
+//	
+//	/*char arr1[] = "abc" ;
+//	char arr2[] = { 'a','b','c' };
+//	printf("%d\n", strlen(arr1));
+//	printf("%d\n", strlen(arr2));
+//	return 0;*/
+//}
+//int add(int x,int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//int main()
+//{
+	/*int line = 0;
+	printf("加入比特\n");
+	while (line<10)
+	{
+		printf("best\n");
+		line++;
+
+	}*/
+
+	//int a = 1, b = 2;
+	//int sum = 0;
+	//sum = add(a, b);
+	//printf("sum=%d", sum);
+
+	//return 0;
+
+
+	int main()
+	{
+		int sz=0,s=0;
+
+		int arr[7] = { 1,2,3,4,5,6,7 };
+		s=sizeof(arr) ;
+		sz = sizeof(arr) / sizeof(arr[0]);
+		printf("%d\n", s);
+		printf("%d\n", sz);
+		//int i = 0;
+		//while (i < 7) {
+		//	printf("%d\n", arr[i]);
+		//	i++;
+		//}
+
+
+		return 0;
+	}
