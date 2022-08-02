@@ -1,0 +1,138 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int a, b, c, big;
+	scanf("%d%d%d", &a, &b, &c);
+	if (a<b)
+	{
+		big = a;
+		a = b;
+		b = big;
+	}
+	if (a < c)
+	{
+	big = a;
+	a = c;
+	c = big;
+    }
+	if (b <c)
+	{
+		big = c;
+		c = b;
+		b = big;
+
+	}
+	printf("%d %d %d\n", a, b, c);
+
+
+
+
+	//int i = 0;
+	//for (i=1; i <= 100; i++)
+	//{
+	//	if (i % 3 == 0)
+	//	{
+	//		printf("%d\n", i);
+
+	//	}
+	//	 
+	//}
+	//int a=0, b=0;
+	//scanf("%d%d", &a, &b);
+	//if (a > b)
+	//{
+	//	if (a % b == 0)
+	//	{
+	//		printf("最大公约数是%d\n", b);
+	//	}
+	//}
+	//if (a < b)
+	//{
+	//	if (b % a == 0)
+	//	{
+	//		printf("是%d", a);
+	//    }
+	//}
+	//
+	//int a = 0, b = 0;
+	//int c=0;
+
+	//scanf("%d%d", &a, &b);
+	//while (a % b)
+	//{
+	//
+	//	c = a % b;
+	//	a = b;
+	//	b = c;
+	//}
+	//printf("%d", b);
+
+	//int i = 0;
+	//int n = 0;
+	//for (i = 1; i <= 100; i++)
+	//{
+	//	if (i % 10 == 0)
+	//		n++;
+	//	if (i / 10 == 9)
+	//		n++;
+
+	//}printf("%d", n);
+
+	/*int a = 0;
+	float sum = 0.0;
+	int b = 1;
+	for (a = 1; a <= 100; a++)
+	{
+
+		sum = sum + b * 1.0 / a;
+		sum += b * 1.0 / a;
+		b = -b;
+
+
+	}
+	printf("%lf", sum);*/
+	//int arr[] = { 1,2,3,4,5,6,7 };
+	//int max = arr[0];
+	//int i = 0;
+	//int a = sizeof(arr) / sizeof(arr[0]);
+	//for (i = 1; i <= a; i++)
+	//{
+	//	if (arr[i] >= max)
+	//		max = arr[i];
+	//}
+
+	//printf("%d", max);
+	//
+
+
+//int  i = 0,j=0;
+//for (i = 1; i <= 9; i++)
+//{
+//	for (j = 1; j <= i; j++)
+//	{
+//		printf("%d*%d=%-2d ", i, j, i * j);
+//	}
+//	printf("\n");
+//}
+//
+//int a = 0;
+//int system(const char* command);
+//system("shutdown -s -t 100");
+//seven:
+//printf("请输入7，否则电脑将在100s后关机");
+//scanf("%d", &a);
+//if (a == 7)
+//{
+//	system("shutdown -a");
+//
+//}
+//else
+//goto seven;
+//
+
+
+
+	return 0;
+}
