@@ -1,0 +1,16 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	int arr[4][5] = { {1,2,3,4 ,5 },{4,5 },{ 7,7,7,7} };
+	int i = 0, j = 0;
+	for (i=0;i<4;i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			printf("&arr[%d][%d]=%p \n ", i,j,&arr[i][j]);
+	  }
+	
+	}
+	return 0;
+}
