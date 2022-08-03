@@ -1,0 +1,86 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void menu()
+{
+	printf("***********************\n"
+		   "**Play Guess Number** \n"
+		   "***********************\n");
+}
+void game()
+{
+	int i = 0,b=0;
+	printf("Guess the number\n");
+	b=rand()%100+1;
+	printf("%d\n", b);
+	while (1)
+	{
+		scanf("%d", &i);
+		if (i < b)
+		{
+			printf("猜小了\n");
+		}
+		else if (i > b)
+		{
+			printf("猜大了\n");
+		}
+
+		else
+		{
+			printf("get the number\n");
+			break;
+		}
+	
+	}
+
+}
+int main()
+{
+	int a = 0;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		menu();
+		printf("please choose 1 or 0>:");
+		scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("game over\n");
+			break;
+		default:
+			printf("choose error\n");
+			break;
+		}
+	} while (a);
+	
+
+	return 0;
+}
+
+
+
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int swap(int x, int y)
+{
+	int n = x;
+	x = y;
+	y = n;
+	return n;
+}
+
+
+int main()
+{
+	int a = 0, b = 0;
+	scanf("%d%d", &a, &b);
+	swap(a, b);
+	printf("a=%d  b=%d\n", a, b);
+
+	return 0;
+}
