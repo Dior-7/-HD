@@ -1,0 +1,17 @@
+int i,j,Temp,Temp1,Temp2;//temp用来存储俄罗斯方块变量的值
+int a[80][80]={0};//标记游戏屏幕上的一些图案，0代表没有图案，1代表有俄罗斯方块。2表示游戏边框
+int b[4];//俄罗斯方块的形成，四个方块，0，1表示有无
+struct Tetris
+{
+	
+	int x;//横坐标的值 
+	int y;//纵坐标的值
+	int flag;//标记方块类型的序号
+	int next; //下一个方块类型的序号 
+	int speed;//定义移动速度
+	int number;//定义方块个数
+	int score;//游戏产生的分数
+	int level;//游戏的等级
+	 
+};
+HANDLE hOut;//控制台句柄，设置控制台颜色，获取控制台位置
