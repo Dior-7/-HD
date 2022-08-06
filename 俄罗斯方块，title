@@ -1,0 +1,49 @@
+//欢迎界面上的标题
+void title()
+{
+	color(15);
+	gotoxy(24,3);
+	printf("T e t r i s");
+	color(11);
+	gotoxy(18,5);
+	printf("■");
+	gotoxy(18,6);
+	printf("■■");
+	gotoxy(18,7);
+	printf("■");
+	
+	
+	color(14);
+	gotoxy(24,6);
+	printf("■■");
+	gotoxy(26,7);
+	printf("■■");
+	
+	color(10);
+	gotoxy(32,6);
+	printf("■■");
+	gotoxy(32,7);
+	printf("■■");
+	
+	color (13);
+	gotoxy(38,4);
+	printf("■");
+	gotoxy(38,5);
+	printf("■");
+	gotoxy(38,6);
+	printf("■");
+	gotoxy(38,7);
+	printf("■");
+	
+	color(7);
+	gotoxy(46,6);
+	printf("■");
+	gotoxy(42,7);
+	printf("■■■");
+	
+	
+}
+int main ()
+{
+	title ();
+ } 
