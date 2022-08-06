@@ -1,0 +1,34 @@
+//******函数声明*********//
+int color(int c);//控制台中文字的颜色 
+void gotoxy(int x,int y);//光标移到指定位置 
+void DrwaGameframe();//绘制游戏边框 
+void Flag(struct Tetris*);//随机产生方块类型的序号 
+void MakeTetris(struct Tetris*);//制作方块 
+void PrintTetris(struct Tetris*);//打印方块 
+void Clean(struct Tetris*);//清楚方块痕迹 
+void ifmove(struct Tetris*);//判断是否能移动，返回值1，能移动，否则不能移动 
+void Del_Fullline(struct Tetris*);//判断是否满行，并删除满行的俄罗斯方块 
+void Gameplay();//开始游戏 
+void regulation();//游戏规则 
+void explation();//按键说明 
+void welcome();//欢迎界面 
+void Replay(struct Tetris*);//重新开始游戏 
+void tile();//欢迎界面上面的标题 
+void flower();//欢迎界面上的字符装饰花 
+void close();//关闭游戏
+
+//控制文字颜色
+ int color(int c)
+ {
+ 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),c);
+ 	return 0;
+  } 
+
+//控制文字的显示位置
+void gotoxy(int x,int y)
+{
+	COORD pos;//相当于结构体变量，x,y相当于成员
+	pos.X=x;//通过修改pos.X和pos.Y的值来达到修改xy轴坐标的目的
+	pos.Y=y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+ } 
