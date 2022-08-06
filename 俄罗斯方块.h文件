@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <Windows.h>//图形界面接口，图形设备函数等重要功能，比如控制台的坐标位置，字体颜色等等。 
+#include <conio.h>//控制键盘的输入输出,比如上下左右键盘指令.
+#include <time.h>//用到了随机数，所以需要引入time.h头文件进行定义//
+#define FrameX 13//x的坐标值，游戏窗口左上角的x坐标
+#define FrameY 3
+#define Frame_height 20//游戏窗口的高度设置为20
+#define Frame_width 18//游戏窗口宽度设置为18
