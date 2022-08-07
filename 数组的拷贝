@@ -1,0 +1,68 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+//void strcpy(char* pa1, char* pa2)
+//char* strcpy(char*pa1,const char*pa2)
+//{
+//	///*int i = 0;
+//	//int j = 0;
+//	//for (i = 0; i < 10; i++)
+//	//{
+//	//	for (j = 0; j < i; j++)
+//	//	{
+//	//		*pa1 = *pa2;
+//	//		pa2++;
+//	//		pa1++;
+//	//	}
+//	//}*/
+////	while (*pa2 != '\0')
+////	{
+////		*pa1 = *pa2;
+////		pa2++;
+////		pa1++;
+////	}
+////	*pa2 = *pa1;
+//// 
+//// 
+//	//while (*pa1++ = *pa2++)
+//	//{
+//	//	;
+//	//}
+//	char *ret = pa1;
+//	assert(pa1!=NULL);
+//	assert(pa2 != NULL);
+//	while (*pa1++ = *pa2++)
+//	{
+//		;
+//	}
+//	return ret;
+//
+//}
+//
+//int main()
+//{
+//	char arr[] = "##########";
+//	char arr2[] = "handi";
+//	strcpy(arr,arr2);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+int strlen(const char *pa1)
+{
+	assert(*pa1 != NULL);//保证指针有效性;
+	int i = 0;
+	while (*pa1 != '\0')
+	{
+		i += 1;
+		pa1++;
+	}
+	return i;
+}
+int main()
+{
+	char arr[] = "abcdefg";
+	int a=strlen(arr);
+	printf("%d", a);
+	return 0;
+}
