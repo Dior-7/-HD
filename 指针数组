@@ -1,0 +1,67 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int strlen(char *pa)
+{
+	int c = 0;
+	while (*pa == '\0')
+	{
+		c++;
+	}
+	return c;
+}
+int main()
+{
+	/*int a = 7;
+     char* pa = (char*) & a;
+	if (*pa != 0)
+	{
+		printf("大端");
+	}
+	else
+	{
+		printf("小端");
+	}*/
+	//char a[1000];
+	//int i ,n;
+	//for (i = 0; i < 1000; i++)
+	//{
+	//	a[i] = -1 - i;
+	//}
+	//n = strlen(a);
+	//printf("%d", n);
+	
+	//char arr1[] = "abcdef";
+	//char arr2[] = "acbdef";
+	//const char* p1 = "abcdef";
+	//const char* p2 = "abcdef";
+	///*if (arr1 == arr2)
+	//{
+	//	printf("ok");
+	//}
+	//else {
+	//	printf("no");
+	//}*/
+	//if (p1 == p2)
+	//{
+	//	printf("ok");
+	//}
+	//else {
+	//	printf("no");
+
+	//}
+	int arr1[] = { 1,2,3,4,5,6,7 };
+	int arr2[] = { 1,2,3,4,5,6,7 };
+	int arr3[] = { 1,2,3,4,5,6,7 };
+	int* part[] = {arr1,arr2,arr3};
+	int i = 0, j = 0;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 7; j++)
+		{
+			printf("%d",(*part[i]+j));
+			
+		}
+		printf("\n");
+	}
+	return 0;
+}
