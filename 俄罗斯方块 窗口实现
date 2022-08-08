@@ -1,0 +1,130 @@
+//菜单选项 
+void welcome()
+{
+    int i = 1, j = 1;
+    int n;
+    color(14);
+    for (i = 9; i <= 20; i++)
+    {
+        for (j = 15; j <= 60; j++)
+        {
+            gotoxy(j, i);
+            if (i == 9 || i == 20)
+            {
+                printf("=");
+
+            }
+            else if (j == 15 || j == 59)
+            {
+                printf("||");
+            }
+
+        }
+    }
+    color(12);
+    gotoxy(25, 12);
+    printf("1.开始游戏");
+    gotoxy(40, 12);
+    printf("2.按键说明");
+    gotoxy(25, 17);
+    printf("3.游戏规则");
+    gotoxy(40, 17);
+    printf("4.退出");
+
+    gotoxy(21, 22);
+    color(3);
+    printf("请选择[1  2  3  4]:[ ]\b\b");
+    color(14);
+    scanf("%d", &n);
+    switch (n)
+    {
+    case 1:
+        system("cls");//清屏  
+        DrwaGameframe();
+        Gameplay();
+        break;
+    case 2:
+        explation();
+        break;
+    case 3:
+        regulation();
+        break;
+    case 4:
+        close();
+        break;
+
+    }
+
+}
+
+//制作游戏窗口
+void DrwaGameframe()
+{
+    gotoxy(FrameX + Frame_width - 7, FrameY - 2);
+    color(11);
+    printf("Tetris");
+
+    color(12);
+    gotoxy(FrameX, FrameY);
+    printf("╔");
+    gotoxy(FrameX + 2 * Frame_width - 2, FrameY);
+    printf("╗");
+    gotoxy(FrameX, FrameY + Frame_height);
+    printf("╚");
+    gotoxy(FrameX + 2 * Frame_width - 2, FrameY + Frame_height);
+    printf("╝");
+
+
+    //上横框 
+    for (i = 2; i < 2 * Frame_width - 2; i += 2)//因为制表符属于中文字符，需要移位两个字符 
+    {
+        gotoxy(FrameX + i, FrameY);
+        printf("═");
+
+    }
+
+    //下横框 
+    for (i = 2; i < 2 * Frame_width - 2; i += 2)
+    {
+        gotoxy(FrameX + i, FrameY + Frame_height);
+        printf("═");
+        a[FrameX + i][FrameY + Frame_height] = 2;//设置下边框的边界 
+
+    }
+
+    //左竖框
+    for (i = 1; i < Frame_height; i++)
+    {
+        gotoxy(FrameX, FrameY + i);
+        printf("║");
+        a[FrameX][FrameY + i] = 2;
+
+    }
+
+    //右竖框
+    for (i = 1; i < Frame_height; i++)
+    {
+        gotoxy(FrameX + 2 * Frame_width - 2, FrameY + i);
+        printf("║");
+        a[FrameX + 2 * Frame_width - 2][FrameY + i] = 2;
+    }
+
+    color(2);
+    gotoxy(FrameX + 2 * Frame_width + 3, FrameY + 7);
+    printf("**********");
+    gotoxy(FrameX + 2 * Frame_width + 3, FrameY + 13);
+    printf("**********");
+
+    color(3);
+    gotoxy(FrameX + 2 * Frame_width + 13, FrameY + 7);
+    printf("下一出现方块:");
+
+    color(14);
+    gotoxy(FrameX + 2 * Frame_width + 3, FrameY + 17);
+    printf("↑键:旋转");
+    gotoxy(FrameX + 2 * Frame_width + 3, FrameY + 19);
+    printf("空格:暂停游戏");
+    gotoxy(FrameX + 2 * Frame_width + 3, FrameY + 15);
+    printf("Esc:退出游戏");
+
+}
