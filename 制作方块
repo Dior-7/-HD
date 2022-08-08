@@ -1,0 +1,188 @@
+//制作俄罗斯方块
+void MakeTetris(struct Tetris* tetris)
+{
+    a[tetris->x][tetris->y] = b[0];//中心方块
+    switch (tetris->flag)
+    {
+    case 1:
+    {
+        color(10);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x + 2][tetris->y - 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+    case 2:
+    {
+        color(13);
+        a[tetris->x - 2][tetris->y] = b[1];
+        a[tetris->x + 2][tetris->y] = b[2];
+        a[tetris->x + 4][tetris->y] = b[3];
+        break;
+    }
+    case 3://直线方块 
+    {
+        color(13);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x][tetris->y - 2] = b[2];
+        a[tetris->x][tetris->y + 1] = b[3];
+        break;
+    }
+    case 4://T型方块 
+    {
+        color(11);
+        a[tetris->x - 2][tetris->y] = b[1];
+        a[tetris->x + 2][tetris->y] = b[2];
+        a[tetris->x][tetris->y + 1] = b[3];
+        break;
+    }
+
+    case 5:         /* 顺时针90°T字方块   ■
+                                         ■■
+                                           ■*/
+    {
+        color(11);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x][tetris->y + 1] = b[2];
+        a[tetris->x - 2][tetris->y] = b[3];
+        break;
+    }
+
+    case 6:         /* 顺时针180°T字方块     ■
+                                            ■■■*/
+    {
+        color(11);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x - 2][tetris->y] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+
+    case 7:         /* 顺时针270°T字方块   ■
+                                            ■■
+                                            ■  */
+    {
+        color(11);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x][tetris->y + 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+
+    case 8:         /* Z字方块   ■■
+                                   ■■*/
+    {
+        color(14);
+        a[tetris->x][tetris->y + 1] = b[1];
+        a[tetris->x - 2][tetris->y] = b[2];
+        a[tetris->x + 2][tetris->y + 1] = b[3];
+        break;
+    }
+    case 9:         /* 顺时针Z字方块      ■
+                                        ■■
+                                        ■  */
+    {
+        color(14);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x - 2][tetris->y] = b[2];
+        a[tetris->x - 2][tetris->y + 1] = b[3];
+        break;
+    }
+    case 10:        /* 反转Z字方块      ■■
+                                      ■■  */
+    {
+        color(14);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x - 2][tetris->y - 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+    case 11:        /* 顺时针Z字方块    ■
+                                        ■■
+                                          ■  */
+    {
+        color(14);
+        a[tetris->x][tetris->y + 1] = b[1];
+        a[tetris->x - 2][tetris->y - 1] = b[2];
+        a[tetris->x - 2][tetris->y] = b[3];
+        break;
+    }
+    case 12:        /* 7字方块    ■■
+                                    ■
+                                    ■  */
+    {
+        color(12);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x][tetris->y + 1] = b[2];
+        a[tetris->x - 2][tetris->y - 1] = b[3];
+        break;
+    }
+    case 13:        /* 顺时针90°7字方块        ■
+                                            ■■■*/
+    {
+        color(12);
+        a[tetris->x - 2][tetris->y] = b[1];
+        a[tetris->x + 2][tetris->y - 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+    case 14:        /* 顺时针180°7字方块      ■
+                                               ■
+                                               ■■  */
+    {
+        color(12);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x][tetris->y + 1] = b[2];
+        a[tetris->x + 2][tetris->y + 1] = b[3];
+        break;
+    }
+    case 15:        /* 顺时针270°7字方块    ■■■
+                                             ■    */
+    {
+        color(12);
+        a[tetris->x - 2][tetris->y] = b[1];
+        a[tetris->x - 2][tetris->y + 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+    case 16:        /* 反转7字方块    ■■
+                                      ■
+                                      ■    */
+    {
+        color(12);
+        a[tetris->x][tetris->y + 1] = b[1];
+        a[tetris->x][tetris->y - 1] = b[2];
+        a[tetris->x + 2][tetris->y - 1] = b[3];
+        break;
+    }
+    case 17:        /* 顺时针转90°7字方块    ■■■
+                                                  ■*/
+    {
+        color(12);
+        a[tetris->x - 2][tetris->y] = b[1];
+        a[tetris->x + 2][tetris->y + 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+    case 18:        /* 顺时针转180°7字方块    ■
+                                               ■
+                                             ■■    */
+    {
+        color(12);
+        a[tetris->x][tetris->y - 1] = b[1];
+        a[tetris->x][tetris->y + 1] = b[2];
+        a[tetris->x - 2][tetris->y + 1] = b[3];
+        break;
+    }
+    case 19:        /* 顺指针转270°7字方块    ■
+                                               ■■■*/
+    {
+        color(12);
+        a[tetris->x - 2][tetris->y] = b[1];
+        a[tetris->x - 2][tetris->y - 1] = b[2];
+        a[tetris->x + 2][tetris->y] = b[3];
+        break;
+    }
+
+    }
+}
