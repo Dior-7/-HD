@@ -1,0 +1,81 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int add(int x, int y)
+{
+	return x + y;
+}
+int sub(int x, int y)
+{
+	return x - y;
+}
+int mu(int x, int y)
+{
+	return x / y;
+}
+int div(int x, int y)
+{
+	return x * y;
+}
+int main()
+{
+	//char* my_strcpy(char* desk, const char* str);
+	//const char* (*pf)(char* my_strcpy(char *desk,const char*str));
+	//char* (*pfarr[4])(char*, const char*);
+	//int a = 0, b = 0,n;
+	//int (*pfarr[5])(int, int) = { 0,add,sub,mu,div };
+	//do
+	//{
+	//	printf("请输入你要选择的操作：>\n");
+	//	scanf("%d", &n);
+	//
+
+	//	if (n >= 1 && n<6)
+	//	{
+	//		printf("请输入两个操作数:>\n");
+	//		scanf("%d%d", &a, &b);
+	//		int f =pfarr[n](a,b);
+	//		printf("%d\n", f);
+	//	}
+	//	else 
+	//	{
+	//		printf("exit");
+	//	}
+	//
+
+	//} while (n);
+	///*do
+	/*{
+		printf("请输入你要选择的操作：>\n");
+		scanf("%d", &n);
+		printf("请输入两个操作数:>\n");
+		scanf("%d%d", &a, &b);
+		switch (n)
+		{
+		case 1:
+			add(a, b);
+			printf("%d",add(a,b));
+			break;
+		case 2:
+			sub(a, b);
+			printf("%d",sub(a,b));
+			break;
+		case 3:
+			mu(a, b);
+			printf("%d", mu(a, b));
+			break;
+		case 4:
+			div(a, b);
+			printf("%d", div(a, b));
+			break;
+		case 0:
+			printf("exit\n");
+			break;
+		default :
+			printf("选择错误，请重新选择\n");
+		}
+
+	} while (n);*/
+	
+
+	return 0;
+}
