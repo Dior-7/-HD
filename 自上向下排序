@@ -1,0 +1,88 @@
+#define  _CRT_SECURE_NO_WARNINGS
+//#pragma mark - /**归并排序 自顶向下*/
+//-(void)mb_mergeSort {
+//    [self mb_mergeSortArray : self LeftIndex : 0 rightIndex : (int)self.count - 1] ;
+//}
+//- (void)mb_mergeSortArray:(NSMutableArray*)array LeftIndex : (int)l rightIndex : (int)r {
+//    if (l >= r) return;
+//    int mid = (l + r) / 2;
+//    [self mb_mergeSortArray : self LeftIndex : l rightIndex : mid] ;
+//    [self mb_mergeSortArray : self LeftIndex : mid + 1 rightIndex : r] ;
+//    [self mb_mergeSortArray : self LeftIndex : l midIndex : mid rightIndex : r] ;
+//}
+//
+//- (void)mb_mergeSortArray:(NSMutableArray*)array LeftIndex : (int)l midIndex : (int)mid rightIndex : (int)r {
+//
+//    SEL func = NSSelectorFromString(@"resetSortArray:");
+//    // 开辟新的空间 r-l+1的空间
+//    NSMutableArray* aux = [NSMutableArray arrayWithCapacity : r - l + 1];
+//    for (int i = l; i <= r; i++) {
+//        // aux 中索引 i-l 的对象 与 array 中索引 i 的对象一致
+//        aux[i - l] = self[i];
+//    }
+//    // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
+//    int i = l, j = mid + 1;
+//    for (int k = l; k <= r; k++) {
+//        if (i > mid) { // 如果左半部分元素已经全部处理完毕
+//            self.comparator(nil, nil);
+//            self[k] = aux[j - l];
+//            j++;
+//        }
+//        else if (j > r) {// 如果右半部分元素已经全部处理完毕
+//            self.comparator(nil, nil);
+//            self[k] = aux[i - l];
+//            i++;
+//        }
+//        else if (self.comparator(aux[i - l], aux[j - l]) == NSOrderedAscending) {// 左半部分所指元素 < 右半部分所指元素
+//            self[k] = aux[i - l];
+//            i++;
+//        }
+//        else {
+//            self.comparator(nil, nil);
+//            self[k] = aux[j - l];
+//            j++;
+//        }
+//
+//        NSMutableArray* mutArray = [NSMutableArray array];
+//        [self enumerateObjectsUsingBlock : ^ (MBBarView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            [mutArray addObject : [NSString stringWithFormat : @"%f", obj.frame.size.height] ] ;
+//        }] ;
+//
+//        objc_msgSendSortArray(self.vc, func, mutArray);
+//    }
+//
+//}
+#include <stdio.h>
+#include<stdlib.h>
+typedef struct stu
+{
+	int age;
+	char name[20];
+	char id[20];
+
+}stu;
+void stru(stu*  ts)
+{
+	printf("age:  %d \n",ts->age);
+	printf("name: %s \n", ts->name);
+	printf("id: %s \n ", ts->id);
+}
+int main()
+{
+
+   /* stu s={21,"handi","777"};
+	stru(&s);*/
+	int i = 0;
+	for (i = 0; i < 100; i++)
+	{
+		printf(" %d ", i);
+	}
+	system("pause");
+	for (i = 0; i < 100; i++)
+	{
+		printf(" %d ", 10 - i);
+
+	}
+	system("pause");
+	return 0;
+}	
