@@ -1,0 +1,73 @@
+#define  _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int main()
+//{
+//	int a = 0,b = 0;
+//	int s,n,k;
+//	scanf("%d%d", &a, &b);
+//	s = a + b;
+//	n = a * b;
+//	k = a / b;
+//
+//	printf("%d\n%d\n%d\n", s,n,k);
+//
+//	return 0;
+//}
+#include <stdio.h>
+#include <stddef.h>
+
+//struct
+//{
+//
+//}sa;
+//struct Node 
+//{
+//	int date;
+//	struct Node *next;
+//};
+//struct S1
+//{
+//	char a;
+//	int i;
+//	double b;
+//
+//};
+
+struct S2
+{
+	char c='w';
+	double a=3.14;
+	char b='k';
+
+};
+
+//void  temp(struct S2 *s)
+//{
+//	s->a = 2;
+//	s->b = 3;
+//	s->w = 5;
+//
+//
+//}
+void print(struct S2* ps)
+{
+	printf(" %c %lf %c\n", ps->c, ps->a, ps->b);
+}
+//void print(struct S2 )1
+//{
+//
+//}
+int main()
+{
+	//struct sa;
+	//struct S1 s;
+	//printf("%d", sizeof(s));
+	/*printf("%d\n", offsetof(s,a));
+	printf("%d\n", offsetof(s, i));
+	printf("%d\n", offsetof(s, b));*/
+	struct S2 s = { 0 };
+	/*temp(&s);*/
+	print(&s);
+
+	return 0;
+}
