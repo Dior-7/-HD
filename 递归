@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int born ( int n, int sum )
+{
+int year=1;
+while ( year<n )
+{
+if ( year>4 )
+{
+sum ++; 
+//sum = born ( n, sum );这行注释掉，因为我不知道你这题是什么，就这么解决了 
+//如果这行不注释掉就一直是死循环
+ 
+}year ++;
+}
+return sum;
+}
+
+int main(){
+
+int sum;
+
+sum = born ( 8, 1 );
+
+cout<<sum<<endl;
+
+system("pause");
+return 0;
+}
