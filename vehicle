@@ -1,0 +1,45 @@
+#include"Vehicle.h"
+Vehicle::Vehicle(string name,int number,string type,Date date,string address,string producer)
+:vehicleName(name),vehicleNumber(number),vehicleType(type),vehicleOrderDate(date),vehicleAddress(address),vehicleProducer(producer)
+{
+}
+void Vehicle::setVehicle(string name,int number,string type,Date date,string address,string producer)
+{
+	vehicleName=name;
+	vehicleNumber=number;
+	vehicleType=type;
+	vehicleOrderDate=date;
+	vehicleAddress=address;
+	vehicleProducer=producer;
+}
+bool Vehicle::operator==(Vehicle &vehicle)
+{
+	return (vehicleName==vehicle.vehicleName&&vehicleNumber==vehicle.vehicleNumber&&vehicleType==vehicle.vehicleType);
+}
+Vehicle& Vehicle::operator==(Vehicle &vehicle)
+{
+	vehicleName=vehicle.vehicleName;
+	vehicleNumber=vehicle.vehicleNumber;
+	vehicleType=vehicle.vehicleType;
+	vehicleOrderDate=vehicle.vehicleOrderDate;
+	vehicleAddress=vehicle.vehicleAddress;
+	vehicleProducer=vehicle.vehicleProducer;
+	return *this;
+}
+ostream &operator<<(ostream &out,const Date &date)
+{
+	out<<left<<date.getYear()<<"/"<<date.getMouth()<<"/"<<date.getDay();
+	return out;
+}
+istream &operator>>(istream &in,Date &date)
+{
+	int year,mouth,day;
+	in>>year>>mouth>>day;
+	date.setDate(year,mouth,day);
+	return in;
+}
+void Vehicle::printVehicle()
+{
+	cout<<left<<setw(12)<<vehicleName<<setw(6)<<vehicleNumber<<setw(12)<<vehicleType<<setw(12)<<vehicleAddress<<setw(12)<<vehicleProducer<<vehicleOrderDate<<endl;
+}
+
