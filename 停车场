@@ -1,0 +1,82 @@
+int main()//主函数
+{
+	A.f_shezhitoujiedian();//设置头结点 
+	A.f_duquyoujia();//读取油价信息 
+	A.f_duqucheliangxinxi();//读取车辆信息 
+	A.f_tongji1();//统计当前车库中车的数量 
+	A.f_duqu_xinxikudaxiao();//读取车辆信息库大小 
+	cout<<"正在进入系统..."<<endl;
+	system("pause"); system("cls");
+	f_zhucaidan();
+	system("pause"); system("cls");
+	A.f_baocunyoujia();//保存汽油和柴油价格信息函数	
+	A.f_xiaohuilianbiao();//销毁链表函数
+	return 0;
+} 
+
+void qiche::f_lurushuju(qiche *p)//录入数据函数 
+{
+		char ch0; 
+		int k,k1,j; 
+		 cout<<"编号:";           cin>>p->bianhao;     	 getchar();
+		 k=f_duibibianhao(p->bianhao);
+		 while(k!=0)
+		 {
+			cout<<"输入的车辆编号已存在，请重新输入！"<<endl; 
+			cout<<"编号:";           cin>>p->bianhao;	        getchar();
+			k=f_duibibianhao(p->bianhao);
+		 }
+		 cout<<"车牌号:";         cin>>p->chepaihao;  		getchar();
+	     k1=f_duibichepaihao(p->chepaihao);
+		 while(k1!=0)
+		 {
+			cout<<"输入的车牌号已存在，请重新输入！"<<endl; 
+			cout<<"车牌号:";         cin>>p->chepaihao;  		getchar();
+			k1=f_duibichepaihao(p->chepaihao); 
+		 }
+		 //以上6行代码是判断车牌号是否相同
+		 do
+		 {
+			cout<<"___________________"<<endl;
+			cout<<"***输入车型***"<<endl; 
+			cout<<"1.客车****"<<endl; 
+			cout<<"2.卡车****"<<endl;
+			cout<<"3.小轿车**"<<endl;  
+			cout<<"4.其它车**"<<endl; 
+			cout<<"___________________"<<endl;
+			cout<<"请选择：";
+			cin>>ch0;
+			switch(ch0)
+		   {
+				case '1':j=1;p->chexing=j;strcpy(p->chexing1,"客车");p->jibenweihufei=2000; break;
+		    	case '2':j=2;p->chexing=j;strcpy(p->chexing1,"卡车");p->jibenweihufei=1500;break;
+				case '3':j=3;p->chexing=j;strcpy(p->chexing1,"小轿车");p->jibenweihufei=1000;break;
+				case '4':
+						{
+							j=4;p->chexing=j; 
+							cout<<"请输入车型:";
+							cin>>p->chexing1;			getchar();
+							cout<<"基本维护费(单位:元/月):"; 
+							cin>>p->jibenweihufei; 		getchar();
+						}break;
+				default :cout<<"输入有误！将要重新输入"<<endl; 
+		   }	 
+	 	 }while(j<1||j>4);
+		 switch(p->chexing)
+		 {
+			case 1:cout<<"载客量(单位:人):";  cin>>p->zaikeliang;  getchar();break;
+			case 2:cout<<"载重量(单位:吨):";  cin>>p->zaizhong;    getchar();break;
+			case 3:cout<<"厢  数:";  cin>>p->xiangshu;    getchar();break;
+			case 4:cout<<"厢  数:";  cin>>p->xiangshu;    getchar();break;
+			default :break; 
+		 }		
+		 cout<<"制造公司:";       cin>>p->zhizaogongsi;		getchar();
+		 cout<<"购车时间:";      cin>>p->goucheshijian; 		getchar();
+		 //cout<<"油价:"; 	 	  cin>>p->youjia; 			    getchar();
+		 A.f_xuanzeyouxinghao1(p);//选择车油的型号函数 
+		 cout<<"总公里数:"; 	  cin>>p->zonggonglishu; 		getchar();
+		 cout<<"每公里耗油量(单位:升):";   cin>>p->meigonglihaoyouliang;getchar();
+		 //cout<<"基本维护费(单位:元/月):";    cin>>p1->jibenweihufei; 		getchar();
+		 cout<<"养路费(单位:元/月):";  	  cin>>p->yanglufei; 			getchar();
+		 p->leijizongfeiyong=p->youjia*p->zonggonglishu*p->meigonglihaoyouliang+p->jibenweihufei+p->yanglufei;//车辆当月总费用=油价*耗油量+基本维护费用+养路费	
+}
