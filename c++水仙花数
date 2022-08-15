@@ -1,0 +1,25 @@
+#include <iostream>             //控制台操作头文件
+#include <math.h>               //数学函数头文件
+ 
+bool SX(int a)                  //水仙数判断函数
+{int t=a,s=0,                   //中间变量
+     n=1;                       //a有几位数(最少1位)
+ while(t=t/10) n++;             //借助中间变量t判断a有几位数
+ if(n<3) return false;          //如果小于3位数返回假
+ for(t=a;t;t=t/10)              //用循环累计各位数的n次方
+    s+=(int)round(pow(t%10,n));
+ return (s==a);}                //结束函数,返回比较结果
+  
+int main()                      //主函数
+{int i,a,b;                     //循环变量和任意两个数
+ printf("请输入起点：");        //显示提示信息
+ scanf("%d",&a);                //输入起点数值
+ printf("请输入终点：");        //显示提示信息
+ scanf("%d",&b);                //输入终点数值
+ printf("%d-%d之间的水仙数有:",a,b);//显示提示信息
+ for(i=a;i<=b;i++)              //用循环逐个找出a-b之间的水仙数
+    if(SX(i)) printf("%d ",i);  //如果是水仙数则输出
+ printf("\n");                  //换行
+ system("PAUSE");               //屏幕暂停,以便看到显示结果
+ return 0;}                     //结束程序
+ 
