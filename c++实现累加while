@@ -1,0 +1,13 @@
+//使用while语句计算从1到100的累加和：
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i=1,sum=0;
+	while(i<=100){
+		sum+=i;
+		i++;			//改变循环控制变量的值
+	}
+	cout<<"1到100的累加和为 "<<sum<<endl;
+	return 0;
+}
