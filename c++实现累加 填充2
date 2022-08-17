@@ -1,0 +1,25 @@
+//fill：填充值
+#include <numeric>
+#include <vector>
+#include <algorithm>
+class MyPrint
+{
+public:
+	void operator()(int val)
+	{
+		cout << val << " ";
+	}
+};
+void test()
+{
+	vector<int> v;
+	v.resize(10);			//resize,默认填充数值0
+	fill(v.begin(), v.end(), 100);
+	for_each(v.begin(), v.end(), MyPrint());
+	cout << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
