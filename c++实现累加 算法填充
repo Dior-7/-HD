@@ -1,0 +1,21 @@
+算术生成算法：头文件<numeric>
+accumulate, fill
+//accumulate：累加
+#include <numeric>
+#include <vector>
+void test()
+{
+	vector<int> v;
+	for (int i = 1; i < 100; i++)
+	{
+		v.push_back(i);
+	}
+	//计算v中所有元素的和
+	int result = accumulate(v.begin(), v.end(), 0);				//0是初始的累加值
+	cout << result << endl;
+}
+int main()
+{
+	test();
+	return 0;
+}
