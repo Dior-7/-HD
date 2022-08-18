@@ -1,0 +1,64 @@
+#include <iostream>
+#include <functional>
+
+class NativeWindow;
+typedef void (*key_func)(NativeWindow *window, int key);
+
+class NativeWindow {
+public:
+    void set_key_callback(key_func func) {
+        m_key_callback = func;
+    }
+    void set_user_pointer(void *user_data) {
+        m_user_data = user_data;
+    }
+    void *get_user_pointer() {
+        return m_user_data;
+    }
+    void run() {
+        // pass this as the first arg when call the callback
+        m_key_callback(this, 42);
+    }
+private:
+    key_func m_key_callback;
+    void *m_user_data;
+};
+
+class MyWindow {
+public:
+    MyWindow() {
+        m_window = new NativeWindow();
+        m_window->set_user_pointer(this);
+        m_window->set_key_callback(MyWindow::wrap_on_key);
+
+        // m_window->set_key_callback([this](int key) {
+        //     this->on_key(key);
+        // });
+        // ERROR: capturing lambda cannot convert to plain function pointer
+        // cannot convert argument 1 from 
+        //'MyWindow::{ctor}::<lambda_55fc0967713c4b0523cf58ec095b6931>' to 'key_func'
+    }
+    ~MyWindow() {
+        delete m_window;
+    }
+    void run() {
+        m_window->run();
+    }
+    void on_key(int key) {
+        std::cout << "key: " << key << "\n";
+    }
+private:
+    static void wrap_on_key(NativeWindow *window, int key) {
+        MyWindow *this_ = (MyWindow*)(window->get_user_pointer());
+        this_->on_key(key);
+    }
+private:
+    NativeWindow *m_window;
+};
+
+
+int main() {
+    MyWindow my_window;
+    my_window.run();
+    return 0;
+}
