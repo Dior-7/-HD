@@ -1,0 +1,9 @@
+//_Alloc 表示内存分配器，此参数几乎不需要我们关心
+template <class _Ty, class _Alloc = allocator<_Ty>>
+class vector{
+    ...
+protected:
+    pointer _Myfirst;
+    pointer _Mylast;
+    pointer _Myend;
+};
