@@ -1,0 +1,90 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+//struct S
+//{
+//	int n = 0;
+//	int arr[0];//未知的，柔性数组成员-数组的大小是可以随意调整的
+//};
+//int main()
+//{
+//	struct S s;
+//	/*printf("%d\n", sizeof(s));*/
+//	struct S* ps = (struct S*)malloc(sizeof(struct S) + 5 * sizeof(int));
+//	ps->n = 100;
+//	int i = 0;
+//	for (i = 0; i < 5;i++)
+//	{
+//		ps->arr[i]=i;
+//
+//	}
+//	struct S* ptr = (struct S*)realloc(ps, 44);
+//	if (ptr != 0)
+//	{
+//		ps = ptr;
+//
+//	}
+//	for (i = 5; i < 10; i++)
+//	{
+//		ps->arr[i] = i;
+//
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", ps->arr[i]);
+//
+//	}
+//	free(ps);
+//	ps = NULL;
+//	
+//	return 0;
+
+
+//第二种
+struct S
+{
+	int n;
+	int* arr;
+
+};
+int main()
+{
+	struct S s;
+	struct S* ps = (struct S*)malloc(sizeof(struct S));//给ps开辟空间为结构体的大小
+	
+	if (ps != NULL)
+	{
+		ps->arr = (int*)malloc(5 * sizeof(int));
+	}
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		ps->arr[i] = i;
+
+	}
+    int* ptr = (int *)realloc(ps->arr, 10 * sizeof(int));
+	if (ptr !=0)
+	{
+		ps->arr = ptr;
+
+	}
+	for (i = 5; i < 10; i++)
+	{
+		ps->arr[i] = i;
+
+	}
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", ps->arr[i]);
+	}
+	free(ps->arr);
+	ps->arr = (NULL);
+	free(ps);
+	ps = NULL;
+	return 0;
+}
+//柔性数组相比之下是有优势的
+//形式上不容易出错，只free了一次  ，不容易释放错误
+//内存连续的 ， 访问效率更高
+//只malloc了一次，内存碎片更少
+//等等
