@@ -1,0 +1,10 @@
+#define print(x)printf("the value "#x" is %d \n",x)
+
+int main()
+{
+	int a = 7, b = 7;
+	print(a);
+	print(b);
+	return 0;
+
+}
