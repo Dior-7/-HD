@@ -1,0 +1,8 @@
+#define print(x,y)x##y
+int main()
+{
+	int handi7 = 27;
+	/*printf("%d",handi7);*/
+	printf("%d", print(handi, 7));
+	return 0;
+}
