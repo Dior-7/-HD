@@ -1,0 +1,9 @@
+#define seu(x)x*x
+
+int main()
+{
+	int s = seu(2);
+	printf("s=%d", s);
+
+	return 0;
+}
