@@ -1,0 +1,18 @@
+#define py(struct_name_,member_name_)    (int)(&((struct S*)0)->member_name_) 
+//结构体成员变量位置减去0即为偏移量
+//所以定义结构体变量指针，取0的位置来作为结构体成员变量的位置
+//然后将其强制转换为整型，便于后期输出
+struct S
+{
+	char c1;
+	int a;
+	char c2;
+};
+int main()
+{
+	printf("%d\n", py(struct S, c1));
+	printf("%d\n", py(struct S, a));
+	printf("%d\n", py(struct S, c2));
+	return 0;
+}//自定义宏替换，实现模拟宏计算偏移量
+
