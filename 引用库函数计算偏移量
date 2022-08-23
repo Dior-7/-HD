@@ -1,7 +1,7 @@
 #include  <stdio.h>
 
 #include  <stddef.h>
-//offsetof（）用来计算偏移量的函数，包含于stddef.h头文件种
+//offsetof（）用来计算偏移量的函数，包含于stddef.h头文件中
 
 
 int main()
