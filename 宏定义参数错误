@@ -1,0 +1,9 @@
+#define  max(x, y) (x) > (y) ? (x) : (y)//主要原因就是宏参数是完全替换的而不是计算好之后替换
+//int main()
+//{
+//	int a = 7;
+//	int b = 3;
+//	printf("%d\n", max(a++, b++));
+//	printf("%d  %d", a, b);
+//	return 0;
+//}
