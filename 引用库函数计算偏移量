@@ -1,0 +1,16 @@
+#include  <stdio.h>
+
+#include  <stddef.h>
+//offsetof（）用来计算偏移量的函数，包含于stddef.h头文件种
+
+
+int main()
+//{
+//	struct S s;
+//	//宏定义计算偏移量
+//	printf("%d\n", offsetof(struct S,c1));
+//	printf("%d\n",offsetof(struct S, a));
+//	printf("%d\n", offsetof(struct S, c2));
+//
+//	return 0;
+//}
