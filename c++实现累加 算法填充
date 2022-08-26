@@ -11,7 +11,7 @@ void test()
 		v.push_back(i);
 	}
 	//计算v中所有元素的和
-	int result = accumulate(v.begin(), v.end(), 0);				//0是初始的累加值
+	int result = accumulate(v.begin(), v.end(), 0);			//0是初始的累加值
 	cout << result << endl;
 }
 int main()
