@@ -1,6 +1,6 @@
 	template<class T>
 	class vector {
-	public://----------------迭代器--------------------------
+	public://----------------迭代器-------------------------
 		typedef vector<T> Self;
 		typedef T* iterator;
 		typedef const T* const_iterator;
