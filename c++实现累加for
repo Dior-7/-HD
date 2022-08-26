@@ -1,4 +1,4 @@
-//使用for语句计算1到100的累加和：
+//使用for语句计算 1到100的累加和：
 #include<iostream>
 using namespace std;
 int main()
