@@ -21,6 +21,6 @@ int main()
 	{
 		printf("大端");
 	}
-
+ 
 	return 0;
 }
