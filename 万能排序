@@ -7,7 +7,7 @@
 //
 //	for (i = 0; i < sz; i++)
 //	{
-//		for (j = 0; j < sz - 1 - i; j++)
+//		for (j = 0;  j < sz - 1 - i; j++)
 //		{
 //			if (arr[j] > arr[j+1])
 //			{
