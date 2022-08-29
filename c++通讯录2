@@ -1,4 +1,4 @@
-int main() {
+int main() {  
 	//创建通讯录结构体变量
 	AddaressBooks abs;
 	//初始化通讯录中当前人员个数
