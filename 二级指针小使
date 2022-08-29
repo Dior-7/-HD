@@ -1,7 +1,7 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 struct stu
-{
+{ 
 	char name[10];
 	char id[20];
 	int age;
