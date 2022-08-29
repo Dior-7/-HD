@@ -11,7 +11,7 @@ int main()
 		a = b;
 		b = big;
 	}
-	if (a < c)
+	if  (a < c)
 	{
 	big = a;
 	a = c;
