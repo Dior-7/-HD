@@ -2,7 +2,7 @@ int check_sys()
 {
 	union un
 	{
-		char c;
+	 	char c;
 		int i;
 	}s;
 	  s.i = 1;
