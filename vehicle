@@ -1,7 +1,7 @@
 #include"Vehicle.h"
 Vehicle::Vehicle(string name,int number,string type,Date date,string address,string producer)
 :vehicleName(name),vehicleNumber(number),vehicleType(type),vehicleOrderDate(date),vehicleAddress(address),vehicleProducer(producer)
-{
+{ 
 }
 void Vehicle::setVehicle(string name,int number,string type,Date date,string address,string producer)
 {
