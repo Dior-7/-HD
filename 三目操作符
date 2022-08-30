@@ -8,5 +8,5 @@ int main()
 	//int c=(tem > 5 ? a : b);
 	//printf("%d", c);*/
 
-	return 0;
+	 return 0;
 }
