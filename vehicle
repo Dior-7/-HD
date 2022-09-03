@@ -11,7 +11,7 @@ void Vehicle::setVehicle(string name,int number,string type,Date date,string add
 	vehicleOrderDate=date;
 	vehicleAddress=address;
 	vehicleProducer=producer;
-}
+} 
 bool Vehicle::operator==(Vehicle &vehicle)
 {
 	return (vehicleName==vehicle.vehicleName&&vehicleNumber==vehicle.vehicleNumber&&vehicleType==vehicle.vehicleType);
