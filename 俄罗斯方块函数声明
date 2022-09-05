@@ -6,7 +6,7 @@ void Flag(struct Tetris*);//随机产生方块类型的序号
 void MakeTetris(struct Tetris*);//制作方块 
 void PrintTetris(struct Tetris*);//打印方块 
 void Clean(struct Tetris*);//清楚方块痕迹 
-void ifmove(struct Tetris*);//判断是否能移动，返回值1，能移动，否则不能移动 
+void ifmove(struct Tetris*);//判断是否能移动，返回值1，能移动，否则不能移动  
 void Del_Fullline(struct Tetris*);//判断是否满行，并删除满行的俄罗斯方块 
 void Gameplay();//开始游戏 
 void regulation();//游戏规则 
