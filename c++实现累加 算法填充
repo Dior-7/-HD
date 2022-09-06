@@ -1,7 +1,7 @@
 算术生成算法：头文件<numeric>
 accumulate, fill
 //accumulate：累加
-#include <numeric>
+#include <numeric> 
 #include <vector>
 void test()
 {
