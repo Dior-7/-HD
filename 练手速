@@ -1,0 +1,13 @@
+//#include <iostream>
+//int main()
+//{
+//	int s = 0, i = 50;
+//	while (i <= 100)
+//	{
+//		s += i;
+//		++i;
+//	}
+//	std::cout << "s= " << s <<std:: endl;
+//
+//
+//}
