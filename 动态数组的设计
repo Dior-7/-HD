@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+//动态数组结构体
+struct dymic
+{
+	void ** pa;//堆区指针
+	int cam;//维护数组容量
+	int m_size;//维护数组大小
+
+};
+
+//初始化容量
+struct dymic* initdymic(int cam)
+{
+	if (cam <= 0)
+	{
+		return NULL;
+
+	}
+
+	//给数组分配空间
+	 struct dymic * array = malloc(sizeof(struct dymic));
+		return array;
+	if (array == NULL)
+	{
+		return NULL;
+	}
+	//初始化数组
+	array->pa = malloc(sizeof(void*) * cam);
+	array->cam = cam;
+	array->m_size = 0;
+
+};
+main()
+{
+	struct dymic* array=initdymic(5);
+	printf("容量：%d\n,大小：%d\n", array->cam, array->m_size);
+}
+
